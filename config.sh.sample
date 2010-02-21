@@ -1,0 +1,14 @@
+# BIRC_ONMSGGET="${BIRC_ONMSGGET-} echo I got an msg!; "
+# BIRC_ONREGISTERED="${BIRC_ONREGISTERED-} echo 'PRIVMSG john :re!' >> $BIRCIN ; "
+# BIRCTMP='/tmp' 
+# BIRCSERVER='elte.irc.hu'
+# BIRCPORT=6667
+# BIRCMOTD=false
+# chans[1]='private messages'
+# BIRCNAME='Alice Foobar'
+# BIRCNICK=alice
+# BIRCPW=secret
+# BIRCIDENT=abuser
+# BIRCLOG_REC="/tmp/rec$$"
+# BIRCLOG_SENT="/tmp/sent$$"
+# BIRCPROMPT='% '

@@ -1,0 +1,118 @@
+.TH BIRC "1" "May 2009" "BIRC" "User Commands"
+.SH NAME
+birc \- a line oriented IRC client in BASH
+.SH SYNOPSIS
+.B birc
+.IR server [
+.BI ":"port
+] 
+.I nickname
+.SH DESCRIPTION
+.PP
+.B Birc
+is a line oriented IRC client BASH script.  Its user interface is like ed's,
+and has flexible scripting support.  It is not very secure, but easily
+extensible through various scripts.  Chroot or jail environment is recommended.
+
+Invoked with proper arguments, 
+.B Birc 
+tries to connect to
+.IR server .
+
+It takes a while to get connected, but you may start joining channels with the
+.BI j #channel
+command.
+
+If the connection registration is complete, the MOTD is printed. (Unless you
+are typing a command. In that case you have to type RETURN for the MOTD.)
+
+After joining a channel, buffer ID and NAMES list is printed, and it gets the
+current buffer. You can start sending messages to the last joined channel with 
+.BR m \en
+.IR message\ text .
+There is a timeout of 10 secs by default.
+
+Private messages are sent to users with
+.BI m nickname
+command, to channels with
+.BI m #channel_name
+or
+.BI m buffer_ID
+commands.
+
+Private messages get to buffer 1, joined channels have an own buffer. You can
+change between them with
+.BR j [
+.I ID
+]
+command. Before the prompt all unread buffers are listed.
+.B ID
+is optional, its default value is the identifier of the last opened buffer.
+
+.B Birc
+can also send raw IRC commands to the server with
+.BI r raw\ command
+command.
+
+Quitting is done by issuing the
+.B q
+command, and confirming it with
+.BR q [
+.I  message
+]
+command.
+
+.SH OPTIONS
+.TP 10
+.I server
+Connect to this server.
+.TP
+.I port
+Connect on this port. Default is 6667.
+.TP
+.I nickname
+Use this NICK.
+
+.SH FILES
+
+.TP 20
+/etc/birc/config.sh
+System wide
+.B Birc
+initializations.
+.TP
+~/.birc/config.sh
+Personal
+.B Birc
+initializations.
+
+.SH AUTHOR
+.de acc*over-def
+.ds \\$1 \Z'\v'(u;\w'x'*0+\En[rst]-\En[.cht])'\
+\h'(u;-\En[skw]+(-\En[.w]-\w'\\$2'/2)+\En[.csk])'\\$2'
+..
+.acc*over-def ; \(a"
+.acc*over-def ' \'
+Written by 
+.ie t Ma\*'te\*' O\*;ry
+.el   Mate Ory 
+as a home work at Budapest University of Technology and
+Economics in 2009.
+
+.SH "REPORTING BUGS"
+Report 
+.B Birc
+bugs to
+.ie t Ma\*'te\*' O\*;ry
+.el   Mate Ory 
+.BR <orymate@ubuntu.com> .
+
+.SH COPYRIGHT
+Copyright \(co 2009 
+.ie t Ma\*'te\*' O\*;ry
+.el   Mate Ory 
+
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>.
+.br
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.

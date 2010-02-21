@@ -1,0 +1,28 @@
+This is the first public release of Birc IRC client.
+
+Please note, that Birc is written as a university homework, and is mainly a
+proof of concept.
+
+
+
+INSTALLATION
+
+I can't recommend installing it system wide in a multiuser environment.
+
+
+1. Copy birc.sh to your PATH.
+
+2. Copy birc.1 to man's path.
+
+
+BUGS
+
+Report Birc bugs to Mate Ory <orymate@ubuntu.com>.
+
+SEE ALSO
+
+$ man ./birc.sh
+
+
+
+Mate Ory 16 May 2009
